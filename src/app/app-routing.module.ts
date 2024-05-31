@@ -5,11 +5,14 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 const routes: Routes = [
   {path:'' , redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component : LoginComponent },
   { path: 'tasks', component: TasksComponent },
+  { path: 'addtask/:id' , component : AddTaskComponent},
+
   { path: 'projects', component: ProjectsComponent },
   { path: '**', component: NotFoundComponent },
 

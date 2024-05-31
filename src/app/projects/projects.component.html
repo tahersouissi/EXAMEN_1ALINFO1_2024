@@ -1,1 +1,15 @@
-<p>projects works!</p>
+<div *ngFor="let ka of productsList" class="flex ">
+
+  <div>
+{{ka.id}}
+  </div>
+  <div>
+    {{ka.description}}
+
+  </div>
+  <div>
+    {{ka.title}}
+  </div>
+  <button (click)="addtask(1)">Add Task</button>
+<hr>
+</div>

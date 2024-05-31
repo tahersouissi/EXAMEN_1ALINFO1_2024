@@ -1,0 +1,38 @@
+<br>
+<p>formGroup</p>
+<form [formGroup]="Task">
+    <label>id</label>
+    <input class="form-control" type="text" formControlName="id">
+
+    <div class="alert alert-danger" *ngIf="this.Task.controls['id'].invalid && this.Task.controls['id'].touched">
+        <p *ngIf="this.Task.controls['id'].hasError('required')">nom est obligatoire</p>
+    </div>
+
+    <label>title</label>
+    <input class="form-control" type="text" formControlName="title">
+
+    <div class="alert alert-danger" *ngIf="this.Task.controls['title'].invalid && this.Task.controls['title'].touched">
+
+        <p>title est obligatoire</p>
+        <p>tile doit etre min 6 caracteres</p>
+    </div>
+    <label>price</label>
+    <input class="form-control" type="text" formControlName="price">
+
+    <div class="alert alert-danger" *ngIf="this.Task.controls['price'].invalid && this.Task.controls['price'].touched">
+
+        <p>price est obligatoire</p>
+    </div>
+    <label>quantity</label>
+    <input class="form-control" type="text" formControlName="quantity">
+
+
+    <label>Like</label>
+    <input class="form-control" type="text" formControlName="like">
+
+
+
+
+    <input class="btn btn-success" type="submit" value="save"  [disabled]="Task.invalid">
+
+</form>

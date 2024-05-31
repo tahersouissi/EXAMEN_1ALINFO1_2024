@@ -10,6 +10,6 @@ export class ProjectsService {
   constructor(private http:HttpClient) { }
 
   getProducts(){
-    return this.http.get<Product[]>('http://localhost:3000/products')
+    return this.http.get('http://localhost:3000/projects')
   }
 }
