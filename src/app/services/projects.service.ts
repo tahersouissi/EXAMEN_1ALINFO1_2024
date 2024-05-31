@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Task } from '../modules/task';
 
 @Injectable({
   providedIn: 'root'
@@ -7,19 +9,24 @@ import { Injectable } from '@angular/core';
 export class ProjectsService {
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getProducts(){
+  getProducts() {
     return this.http.get('http://localhost:3000/projects')
   }
-
-
-
-  addTasks(data:any){
-    const signInBody = {
-      id: 100,
-      title: "tata",
-    };
-    return this.http.post('http://localhost:3000/task',signInBody)
+  getProductById(num:number) {
+    return this.http.get('http://localhost:3000/projects/'+num)
   }
+
+
+  addTasks(data: any) : Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+    return this.http.post('http://localhost:3000/task', data,httpOptions)
+  }
+
+
 }
