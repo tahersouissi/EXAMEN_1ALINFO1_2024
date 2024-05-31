@@ -1,0 +1,81 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "a title",
+      "description": "description",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "a title 1",
+          "dateD": "2024-03-05",
+          "dateF": "2024-03-06",
+          "status": "canceled",
+          "project": {
+            "id": 3,
+            "title": "a title3",
+            "description": "description3",
+            "tasks": 10000
+          }
+        },
+        {
+          "id": 2,
+          "title": "a title 2",
+          "dateD": "2024-03-09",
+          "dateF": "2024-03-10",
+          "status": "hold",
+          "project": {
+            "id": 3,
+            "title": "a title3",
+            "description": "description3",
+            "tasks": 10000
+          }
+        }
+      ]
+
+    },
+    {
+      "id": 2,
+      "title": "a title2",
+      "description": "description2",
+      "tasks": 1000
+    },
+    {
+      "id": 3,
+      "title": "a title3",
+      "description": "description3",
+      "tasks": 10000
+    }
+  ],
+  "task": [
+    {
+      "id": 1,
+      "title": "a title 1",
+      "dateD": "2024-03-05",
+      "dateF": "2024-03-06",
+      "status": "canceled",
+      "project": {
+        "id": 3,
+        "title": "a title3",
+        "description": "description3",
+        "tasks": 10000
+      }
+    },
+    {
+      "id": 2,
+      "title": "a title 2",
+      "dateD": "2024-03-07",
+      "dateF": "2024-03-08",
+      "status": "active",
+      "project": {
+        "id": 5,
+        "title": "a title5",
+        "description": "description5",
+        "tasks": 10000
+      }
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
