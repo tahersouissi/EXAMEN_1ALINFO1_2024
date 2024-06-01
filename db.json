@@ -1,0 +1,36 @@
+{
+  "Artist":  [
+    {
+      "id": 1,
+      "name": "taher",
+      "genre": "men",
+      "country": "tounis"
+    },
+    {
+      "id": 2,
+      "name": "ronaldo",
+      "genre": "men",
+      "country": "brazil"
+    }
+
+],
+"Reservation":  [
+  {
+    "id": 1,
+    "showId": 1,
+    "name": "reservation 1",
+    "seats": 5
+  },
+  {
+    "id": 1,
+    "showId": 1,
+    "name": "reservation 1",
+    "seats": 5
+  }
+
+],
+
+  "profile": {
+    "name": "typicode"
+  }
+}
