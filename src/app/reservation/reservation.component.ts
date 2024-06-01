@@ -12,7 +12,21 @@ export class ReservationComponent {
 
   constructor(private Act: ActivatedRoute, private ser: ServiceExamService, private router: Router) { }
 
-  save() {
+  save(Reservvv: any) {
+    const Reserv = {
+      name: Reservvv.name,
+      seats: Reservvv.date,
+      showId: this.id,
+    };
+
+    this.ser.addReservation(Reserv).subscribe({
+      next: (data) => {
+        console.log("data" + data)
+        this.router.navigate(['/show'])
+      }
+
+    });
+
   }
 
   id!: number;
@@ -23,7 +37,7 @@ export class ReservationComponent {
 
   Reservation = new FormGroup({
     seats: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-    name: new FormControl('', [Validators.required,]),
+    name: new FormControl('', [Validators.required,Validators.pattern('[0-9]{1}')]),
   })
 
 

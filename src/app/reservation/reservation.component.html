@@ -27,12 +27,13 @@
       <label>seats</label>
     </div>
     <div>
-      <input class="form-control border-2 border-black" type="text" formControlName="seats">
+      <input class="form-control border-2 border-black" type="number" maxlength="10" formControlName="seats">
     </div>
+
     <div class="alert alert-danger bg-red-400"
       *ngIf="this.Reservation.controls['seats'].invalid && this.Reservation.controls['seats'].touched">
+      <p *ngIf="this.Reservation.controls['seats'].hasError('required')">seats est obligatoire</p>
 
-      <p>seats est obligatoire</p>
     </div>
 
   </div>
@@ -43,6 +44,6 @@
 
   <input
     class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
-    type="submit" value="save" (click)="save()" [disabled]="Reservation.invalid">
+    type="submit" value="Reserve" (click)="save(Reservation.value)" [disabled]="Reservation.invalid">
 
 </form>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ServiceExamService } from '../services/service-exam.service';
 import { Show } from '../models/show';
+import { Reservation } from '../models/reservation';
 
 @Component({
   selector: 'app-list-shows',
@@ -8,6 +9,7 @@ import { Show } from '../models/show';
   styleUrls: ['./list-shows.component.css']
 })
 export class ListShowsComponent {
+  total: any;
 
   reserve() {
   }
@@ -17,6 +19,7 @@ export class ListShowsComponent {
 
 
   artits!: Show[];
+  reservations!: Reservation[];
 
   ngOnInit(): void {
 
@@ -27,6 +30,15 @@ export class ListShowsComponent {
 
       },
     })
+
+    this.serv.getReservations().subscribe({
+      next: (data) => this.reservations = data as Reservation[],
+      error(err) {
+        console.log(err);
+
+      },
+    })
+
   }
 
 

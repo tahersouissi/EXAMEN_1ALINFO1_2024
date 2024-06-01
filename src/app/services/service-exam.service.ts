@@ -14,7 +14,9 @@ export class ServiceExamService {
     return this.http.get(this.apiUrl + '/Artist')
   }
 
-
+  getReservations() {
+    return this.http.get(this.apiUrl + '/Reservation')
+  }
 
   getShows() {
     return this.http.get(this.apiUrl + '/Show')
@@ -34,7 +36,15 @@ export class ServiceExamService {
     return this.http.post(this.apiUrl + '/Show', data, httpOptions)
   }
 
+  addReservation(data: any): Observable<any> {
 
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.post(this.apiUrl + '/Show', data, httpOptions)
+  }
 
 
 }

@@ -19,7 +19,8 @@
 
 
 
-    <button (click)="reserve()" class="bg-gray-400">Add Reserve</button>
+    <button [routerLink]="['/reserver',item.id]"   class="bg-gray-400">Add Reserve</button>
   </div>
 
 </div>
+<h1>Number tot de place resserve {{reservations.length}}</h1>
