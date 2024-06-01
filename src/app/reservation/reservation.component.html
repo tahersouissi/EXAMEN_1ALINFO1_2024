@@ -37,23 +37,12 @@
 
   </div>
 
-  <div>
-    <label>Location</label>
-    <input class="form-control border-2 border-black" type="text" formControlName="location">
-
-    <div class="alert alert-danger bg-red-400"
-      *ngIf="this.Reservation.controls['location'].invalid && this.Reservation.controls['location'].touched">
-      <p *ngIf="this.Reservation.controls['location'].hasError('required')">Location est obligatoire</p>
-      <p *ngIf="this.Reservation.controls['location'].hasError('pattern')">Location est de cara seurlemnet</p>
-    </div>
-  </div>
 
 
 
 
-
-  <!-- <input
+  <input
     class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
-    type="submit" value="save" (click)="save(Reservation.value)" [disabled]="Reservation.invalid"> -->
+    type="submit" value="save" (click)="save()" [disabled]="Reservation.invalid">
 
 </form>
