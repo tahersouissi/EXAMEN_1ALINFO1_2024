@@ -23,13 +23,29 @@
   },
   {
     "id": 1,
-    "showId": 1,
-    "name": "reservation 1",
-    "seats": 5
+    "showId": 2,
+    "name": "reservation 2",
+    "seats": 7
   }
 
 ],
+"Show":  [
+  {
+    "id": 1,
+    "title": "one men show",
+    "date": "2022-05-22",
+    "location": "7ay tadhamon",
+    "artistId": 1
+  },
+  {
+    "id": 2,
+    "title": "one men show",
+    "date": "2022-05-23",
+    "location": "Beja",
+    "artistId": 2
+  }
 
+],
   "profile": {
     "name": "typicode"
   }
