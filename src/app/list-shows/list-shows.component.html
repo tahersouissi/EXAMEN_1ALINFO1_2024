@@ -1,1 +1,25 @@
-<p>list-shows works!</p>
+
+
+<h1 class="text-center font-bold"> Shows</h1>
+<label for="tata"> Search</label>
+<input id="tata" type="text"[(ngModel)]="titleinput" class="bg-gray-100">
+<div *ngFor="let item of artits" class="mx-[100px]">
+
+
+  <div class="flex-row border-2 border-black m-5 justify-between"  *ngIf="item.title === titleinput  || !titleinput">
+
+    <h1>title: {{item.title}}</h1>
+    <hr class="w-5 h-5">
+    <h3>artistId: {{item.artistId}}</h3>
+    <hr class="w-5 h-5">
+    <h3>date: {{item.date}}</h3>
+    <hr class="w-5 h-5">
+    <h3>location: {{item.location}}</h3>
+    <hr class="w-5 h-5">
+
+
+
+    <button (click)="reserve()" class="bg-gray-400">Add Reserve</button>
+  </div>
+
+</div>

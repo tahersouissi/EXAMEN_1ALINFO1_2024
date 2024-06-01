@@ -1,1 +1,59 @@
-<p>reservation works!</p>
+<br>
+<h1 class="mx-[500px]">Add Reservation</h1>
+<form [formGroup]="Reservation" class="flex-row justify-center mx-[500px]">
+
+
+  <div class="flex-row">
+    <div>
+
+      <label>name</label>
+    </div>
+
+    <div>
+      <input class="form-control border-2 border-black" type="text" formControlName="name">
+    </div>
+
+    <div class="alert alert-danger bg-red-400" *ngIf="this.Reservation.controls['name'].invalid && this.Reservation.controls['name'].touched">
+      <p *ngIf="this.Reservation.controls['name'].hasError('required')">name est obligatoire</p>
+    </div>
+
+  </div>
+
+
+
+  <div>
+    <div>
+
+      <label>seats</label>
+    </div>
+    <div>
+      <input class="form-control border-2 border-black" type="text" formControlName="seats">
+    </div>
+    <div class="alert alert-danger bg-red-400"
+      *ngIf="this.Reservation.controls['seats'].invalid && this.Reservation.controls['seats'].touched">
+
+      <p>seats est obligatoire</p>
+    </div>
+
+  </div>
+
+  <div>
+    <label>Location</label>
+    <input class="form-control border-2 border-black" type="text" formControlName="location">
+
+    <div class="alert alert-danger bg-red-400"
+      *ngIf="this.Reservation.controls['location'].invalid && this.Reservation.controls['location'].touched">
+      <p *ngIf="this.Reservation.controls['location'].hasError('required')">Location est obligatoire</p>
+      <p *ngIf="this.Reservation.controls['location'].hasError('pattern')">Location est de cara seurlemnet</p>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <input
+    class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+    type="submit" value="save" (click)="save(Reservation.value)" [disabled]="Reservation.invalid"> -->
+
+</form>

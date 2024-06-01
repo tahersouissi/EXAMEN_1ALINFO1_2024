@@ -1,1 +1,58 @@
-<p>add-show works!</p>
+<br>
+<h1 class="mx-[500px]">Add Show</h1>
+<form [formGroup]="Show" class="flex-row justify-center mx-[500px]">
+  <div class="flex-row">
+    <div>
+
+      <label>title</label>
+    </div>
+
+    <div>
+      <input class="form-control border-2 border-black" type="text" formControlName="title">
+    </div>
+
+    <div class="alert alert-danger bg-red-400" *ngIf="this.Show.controls['title'].invalid && this.Show.controls['title'].touched">
+      <p *ngIf="this.Show.controls['title'].hasError('required')">title est obligatoire</p>
+      <p *ngIf="this.Show.controls['title'].hasError('minlength')">title est min de 3 cara</p>
+    </div>
+
+  </div>
+
+
+
+  <div>
+    <div>
+
+      <label>date</label>
+    </div>
+    <div>
+      <input class="form-control border-2 border-black" type="date" formControlName="date">
+    </div>
+    <div class="alert alert-danger bg-red-400"
+      *ngIf="this.Show.controls['date'].invalid && this.Show.controls['date'].touched">
+
+      <p>date est obligatoire</p>
+    </div>
+
+  </div>
+
+  <div>
+    <label>Location</label>
+    <input class="form-control border-2 border-black" type="text" formControlName="location">
+
+    <div class="alert alert-danger bg-red-400"
+      *ngIf="this.Show.controls['location'].invalid && this.Show.controls['location'].touched">
+      <p *ngIf="this.Show.controls['location'].hasError('required')">Location est obligatoire</p>
+      <p *ngIf="this.Show.controls['location'].hasError('pattern')">Location est de cara seurlemnet</p>
+    </div>
+  </div>
+
+
+
+
+
+  <input
+    class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+    type="submit" value="save" (click)="save(Show.value)" [disabled]="Show.invalid">
+
+</form>

@@ -10,6 +10,9 @@ import { ListShowsComponent } from './list-shows/list-shows.component';
 import { AddShowComponent } from './add-show/add-show.component';
 import { ReservationComponent } from './reservation/reservation.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { ReservationComponent } from './reservation/reservation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

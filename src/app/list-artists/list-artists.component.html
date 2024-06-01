@@ -1,1 +1,17 @@
-<p>list-artists works!</p>
+
+
+
+
+<div *ngFor="let item of artits" class="mx-[100px]">
+<div class="flex border-2 border-black m-5 justify-between">
+
+<h1>{{item.name}}</h1>
+<hr class="w-5 h-5">
+<h3>{{item.genre}}</h3>
+<hr class="w-5 h-5">
+<h3>{{item.country}}</h3>
+<hr class="w-5 h-5">
+<button  [routerLink]="['/addshow',item.id]" class="bg-gray-400">Add Show</button>
+</div>
+
+</div>
